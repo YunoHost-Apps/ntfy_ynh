@@ -150,10 +150,10 @@ ynh_systemd_action --service_name=nginx --action=reload
 #=================================================
 # ADD APP ADMIN USER
 #=================================================
-
 ynh_script_progression --message="Adding admin user..." --weight=1
 
 ynh_exec_as $app NTFY_PASSWORD="$password" $final_path/ntfy user --config=$final_path/server.yml add --role=admin $admin
+
 #=================================================
 # END OF SCRIPT
 #=================================================
