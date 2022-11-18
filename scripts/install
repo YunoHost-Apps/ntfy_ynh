@@ -110,7 +110,6 @@ chown $app:$app "$final_path/server.yml"
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
 # Create a dedicated systemd config
-architecture=$YNH_ARCH
 ynh_add_systemd_config
 
 #=================================================
