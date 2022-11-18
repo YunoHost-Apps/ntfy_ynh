@@ -1,0 +1,19 @@
+# ntfy server config file
+#
+# Please refer to the documentation at https://ntfy.sh/docs/config/ for details.
+# All options also support underscores (_) instead of dashes (-) to comply with the YAML spec.
+
+cache-file: __FINALPATH__/data/cache.db
+cache-startup-queries: |
+  pragma journal_mode = WAL;
+  pragma synchronous = normal;
+  pragma temp_store = memory;
+  pragma busy_timeout = 15000;
+  vacuum;
+
+auth-file: __FINALPATH__/data/user.db
+auth-default-access: "deny-all"
+
+attachment-cache-dir: __FINALPATH__/data/attachments
+
+upstream-base-url: "https://ntfy.sh"
