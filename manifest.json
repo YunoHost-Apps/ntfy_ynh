@@ -3,7 +3,8 @@
     "id": "ntfy",
     "packaging_format": 1,
     "description": {
-        "en": "Open Source Push Notification Server"
+        "en": "Open Source Push Notification Server",
+        "fr": "Serveur open source de notification"
     },
     "upstream": {
         "license": "GPL-2.0-only",
