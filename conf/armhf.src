@@ -1,6 +1,6 @@
-SOURCE_URL=https://github.com/binwiederhier/ntfy/releases/download/v1.29.0/ntfy_1.29.0_linux_arm7.tar.gz
-SOURCE_SUM=951eb49ac7dc0eec4f64fbce5e487ca35f22e8824ae93937cf2182ecb029f012
+SOURCE_URL=https://github.com/binwiederhier/ntfy/releases/download/v1.29.1/ntfy_1.29.1_linux_arm7.tar.gz
+SOURCE_SUM=c388fd02dca121e9759863437908a7594119e1422f92970a5a5202696caf2b06
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=ntfy_1.29.0_linux_arm7
+SOURCE_FILENAME=ntfy_1.29.1_linux_arm7
