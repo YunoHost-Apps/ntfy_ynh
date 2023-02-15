@@ -6,6 +6,10 @@
 		setup_nourl=0
 		setup_private=0
 		upgrade=1
+		# 1.29.1~ynh1
+		upgrade=1			from_commit=4af2734d9bb32afbafd97af94507ad0e5191f996
+		# 1.30.1~ynh1
+		upgrade=1			from_commit=6d7d7082971be2626d082a117cdd613a21716f61
 		backup_restore=1
 		multi_instance=1
 		port_already_use=0
