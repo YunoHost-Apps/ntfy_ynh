@@ -5,15 +5,16 @@ It shall NOT be edited by hand.
 
 # ntfy pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+
 [![Installer ntfy avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer ntfy rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer ntfy rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 ntfy (pronounce: *notify*) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, entirely without signup, cost or setup. It's also open source if you want to run your own.
 
@@ -36,10 +37,10 @@ The configuration file is located at `/var/www/<app>/server.yml`.
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://ntfy.sh/>
+* Site officiel de l’app : <https://ntfy.sh/>
 * Documentation officielle utilisateur : <https://docs.ntfy.sh/>
-* Documentation officielle de l'admin : <https://docs.ntfy.sh/>
-* Dépôt de code officiel de l'app : <https://github.com/binwiederhier/ntfy>
+* Documentation officielle de l’admin : <https://docs.ntfy.sh/>
+* Dépôt de code officiel de l’app : <https://github.com/binwiederhier/ntfy>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_ntfy>
 * Signaler un bug : <https://github.com/YunoHost-Apps/ntfy_ynh/issues>
 
@@ -55,4 +56,4 @@ ou
 sudo yunohost app upgrade ntfy -u https://github.com/YunoHost-Apps/ntfy_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
