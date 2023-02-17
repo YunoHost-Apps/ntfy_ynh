@@ -1,6 +1,6 @@
-SOURCE_URL=https://github.com/binwiederhier/ntfy/releases/download/v1.31.0/ntfy_1.31.0_linux_arm64.tar.gz
-SOURCE_SUM=b2c5351385bef867a1909713c199f384de643d64c255af67eeb147ad3658d1c9
+SOURCE_URL=https://github.com/binwiederhier/ntfy/releases/download/v2.0.0/ntfy_2.0.0_linux_arm64.tar.gz
+SOURCE_SUM=fb5f6df4da0d4e625fa15ef1a006e63912cdcd65c3c2bbc78018bf9ea9964498
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=ntfy_1.31.0_linux_arm64
+SOURCE_FILENAME=ntfy_2.0.0_linux_arm64
