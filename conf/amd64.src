@@ -1,5 +1,5 @@
 SOURCE_URL=https://github.com/binwiederhier/ntfy/releases/download/v2.0.0/ntfy_2.0.0_linux_x86_64.tar.gz
-SOURCE_SUM=17fb41d037bc4193f9954be8d164eafe11657c4b3a8770deb926d2e534497fed
+SOURCE_SUM=3603e08929fc5e7980f7e0d198e5f5545d23957bb60c8daf6ab9bc0165549285
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
