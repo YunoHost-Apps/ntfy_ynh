@@ -105,6 +105,14 @@ chmod 400 "$final_path/server.yml"
 chown $app:$app "$final_path/server.yml"
 
 #=================================================
+# ADD A SIMPLE WRAPPER SCRIPT
+#=================================================
+ynh_script_progression --message="Adding a command wrapper..." --weight=1
+
+ynh_add_config --template="ntfy.sh" --destination="$final_path/ntfy.sh"
+chmod +x "$final_path/ntfy.sh"
+
+#=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1

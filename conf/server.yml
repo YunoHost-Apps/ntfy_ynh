@@ -13,6 +13,7 @@ cache-startup-queries: |
 
 auth-file: __FINALPATH__/data/user.db
 auth-default-access: "deny-all"
+enable-login: true
 
 attachment-cache-dir: __FINALPATH__/data/attachments
 
