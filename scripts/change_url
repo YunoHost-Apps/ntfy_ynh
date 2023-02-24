@@ -10,6 +10,6 @@ ynh_script_progression -m "Updating webserver configuration..." -w 1
 ynh_change_url_nginx_config
 
 ynh_script_progression -m "Restarting systemd service..." -w 1
-ynh_systemd_action -a restart
+ynh_systemd_action --action=restart
 
 ynh_script_progression -m "URL change completed" -l

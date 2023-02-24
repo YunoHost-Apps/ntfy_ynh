@@ -30,6 +30,6 @@ ynh_script_progression -m "Upgrading web server configuration..." -w 2
 ynh_add_nginx_config
 
 ynh_script_progression -m "Restarting systemd service..." -w 1
-ynh_systemd_action -a restart
+ynh_systemd_action --action=estart
 
 ynh_script_progression -m "Upgrade completed" -l

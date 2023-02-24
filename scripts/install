@@ -13,7 +13,7 @@ ynh_script_progression -m "Configuring systemd service..." -w 1
 ynh_add_systemd_config
 
 ynh_script_progression -m "Starting systemd service..." -w 1
-ynh_systemd_action -a start
+ynh_systemd_action --action=start
 
 ynh_script_progression -m "Integrating service in YunoHost..." -w 1
 yunohost service add $app
