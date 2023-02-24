@@ -23,6 +23,7 @@ yunohost service add $app
 
 ynh_script_progression -m "Updating simple command wrapper..." -w 1
 ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
+chown $app:$app "$install_dir/ntfy.sh"
 chmod u+x "$install_dir/ntfy.sh"
 
 ynh_script_progression -m "Upgrading web server configuration..." -w 2
