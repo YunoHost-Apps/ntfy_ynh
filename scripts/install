@@ -28,6 +28,6 @@ ynh_script_progression -m "Starting systemd service..." -w 1
 ynh_systemd_action -a start
 
 ynh_script_progression -m "Adding admin user..." -w 1
-ynh_exex_as $app NTFY_PASSWORD="$password" $install_dir/ntfy.sh user add --role=admin $admin
+ynh_exec_as $app NTFY_PASSWORD="$password" $install_dir/ntfy.sh user add --role=admin $admin
 
 ynh_script_progression -m "Installation completed" -l

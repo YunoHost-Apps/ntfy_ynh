@@ -9,8 +9,8 @@
 #=================================================
 ntfy_setup_source() {
     ynh_setup_source -d "$install_dir" -s "$YNH_ARCH"
-    ynh_secure_remove -f "$install_dir/client"
-    ynh_secure_remove -f "$install_dir/server"
+    ynh_secure_remove "$install_dir/client"
+    ynh_secure_remove "$install_dir/server"
     mkdir -p "$install_dir/data"
 }
 
