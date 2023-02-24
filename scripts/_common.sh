@@ -15,6 +15,7 @@ ntfy_setup_source() {
 }
 
 ntfy_fix_permissions() {
+    chown -R $app:$app "$install_dir"
     chmod -R 750 "$install_dir"
     chmod +x "$install_dir/ntfy.sh"
 }
