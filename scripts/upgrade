@@ -21,9 +21,6 @@ ynh_add_config -t "server.yml" -d "$install_dir/server.yml"
 ynh_script_progression -m "Updating simple command wrapper..." -w 1
 ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
 
-ynh_script_progression -m "Fixing file permissions..." -w 1
-ntfy_fix_permissions
-
 ynh_script_progression -m "Upgrading systemd configuration..." -w 1
 ynh_add_systemd_config
 
