@@ -7,7 +7,7 @@ ynh_script_progression -m "Restoring the main directory..." -w 1
 ynh_restore_file -o "$install_dir"
 
 ynh_script_progression -m "Fixing file permissions..." -w 1
-ntfy_fix_permissions $app $install_dir
+ntfy_fix_permissions
 
 ynh_script_progression -m "Restoring the web server configuration..." -w 1
 ynh_restore_file -o "/etc/nginx/conf.d/$domain.d/$app.conf"

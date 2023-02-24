@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source /usr/share/yunohost/helpers
 source _common.sh
+source /usr/share/yunohost/helpers
 
 ynh_script_progression -m "Setting up source files..." -w 6
-ntfy_setup_src $YNH_ARCH $install_dir
+ntfy_setup_src
 
 ynh_script_progression -m "Configuring web server..." -w 2
 ynh_add_nginx_config
@@ -16,7 +16,7 @@ ynh_script_progression -m "Adding a command wrapper..." -w 1
 ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
 
 ynh_script_progression -m "Fixing file permissions..." -w 1
-ntfy_fix_permissions $install_dir $app
+ntfy_fix_permissions
 
 ynh_script_progression -m "Configuring systemd service..." -w 1
 ynh_add_systemd_config
