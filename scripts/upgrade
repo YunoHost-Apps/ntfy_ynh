@@ -8,7 +8,7 @@ upgrade_type=$(ynh_check_app_version_changed)
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression -m "Upgrading source files..." -w 1
+	ynh_script_progression -m "Upgrading source files..." -w 6
 	ntfy_setup_source
 fi
 
