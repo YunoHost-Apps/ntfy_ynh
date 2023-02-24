@@ -7,7 +7,7 @@
 #=================================================
 # PERSONAL HELPERS
 #=================================================
-ntfy_setup_source {
+ntfy_setup_source() {
     # $YNH_ARCH=$1
     # $install_dir=$2
 
@@ -18,7 +18,7 @@ ntfy_setup_source {
     mkdir -p "$install_dir/data"
 }
 
-ntfy_fix_permissions {
+ntfy_fix_permissions() {
     # $app=$1
     # $install_dir=$2
 
