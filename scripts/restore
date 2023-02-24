@@ -20,6 +20,6 @@ ynh_script_progression -m "Starting a systemd service..." -w 1
 ynh_systemd_action -a start
 
 ynh_script_progression -m "Reloading the web server..." -w 1
-ynh_systemd_action -a restart -n nginx
+ynh_systemd_action -n nginx -a restart
 
 ynh_script_progression -m "Restoration completed" -l
