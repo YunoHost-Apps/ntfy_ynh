@@ -1,168 +1,32 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
-#=================================================
-# MANAGE SCRIPT FAILURE
-#=================================================
-
-ynh_clean_setup () {
-	true
-}
-# Exit if an error occurs during the execution of the script
-ynh_abort_if_errors
-
-#=================================================
-# RETRIEVE ARGUMENTS FROM THE MANIFEST
-#=================================================
-
-domain=$YNH_APP_ARG_DOMAIN
-app=$YNH_APP_INSTANCE_NAME
-
-admin=$YNH_APP_ARG_ADMIN
-password=$YNH_APP_ARG_PASSWORD
-
-#=================================================
-# CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
-#=================================================
-ynh_script_progression --message="Validating installation parameters..." --weight=1
-
-final_path=/var/www/$app
-test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
-
-# Register (book) web path
-ynh_webpath_register --app=$app --domain=$domain --path_url=/
-
-#=================================================
-# STORE SETTINGS FROM MANIFEST
-#=================================================
-ynh_script_progression --message="Storing installation settings..." --weight=1
-
-ynh_app_setting_set --app=$app --key=domain --value=$domain
-
-#=================================================
-# STANDARD MODIFICATIONS
-#=================================================
-# FIND AND OPEN A PORT
-#=================================================
-ynh_script_progression --message="Finding an available port..." --weight=1
-
-# Find an available port
-port=$(ynh_find_port --port=8080)
-ynh_app_setting_set --app=$app --key=port --value=$port
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=2
-
-# Create a system user
-ynh_system_user_create --username=$app --home_dir="$final_path"
-
-#=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
 ynh_script_progression --message="Setting up source files..." --weight=6
+ntfy_setup_source
 
-ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-# Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$final_path" --source_id="$YNH_ARCH"
+ynh_script_progression --message="Adding configuration file..." --weight=1
+ynh_add_config -t "server.yml" -d "$install_dir/server.yml"
 
-ynh_secure_remove --file=$final_path/client
-ynh_secure_remove --file=$final_path/server
-
-mkdir -p "$final_path/data"
-
-chmod 750 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:$app "$final_path"
-
-#=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Configuring NGINX web server..." --weight=2
-
-# Create a dedicated NGINX config
-ynh_add_nginx_config
-
-#=================================================
-# SPECIFIC SETUP
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-ynh_add_config --template="server.yml" --destination="$final_path/server.yml"
-
-chmod 400 "$final_path/server.yml"
-chown $app:$app "$final_path/server.yml"
-
-#=================================================
-# ADD A SIMPLE WRAPPER SCRIPT
-#=================================================
-ynh_script_progression --message="Adding a command wrapper..." --weight=1
-
-ynh_add_config --template="ntfy.sh" --destination="$final_path/ntfy.sh"
-chmod +x "$final_path/ntfy.sh"
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=1
-
-# Create a dedicated systemd config
+ynh_script_progression --message="Configuring systemd service..." --weight=1
 ynh_add_systemd_config
 
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
+ynh_script_progression --message="Starting systemd service..." --weight=1
+ynh_systemd_action --action=start
 
+ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 yunohost service add $app
 
-#=================================================
-# START SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression --message="Adding a command wrapper..." --weight=1
+ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
+chown $app:$app "$install_dir/ntfy.sh"
+chmod u+x "$install_dir/ntfy.sh"
 
-# Start a systemd service
-ynh_systemd_action --service_name=$app --action="start"
+ynh_script_progression --message="Configuring web server..." --weight=2
+ynh_add_nginx_config
 
-#=================================================
-# SETUP SSOWAT
-#=================================================
-ynh_script_progression --message="Configuring permissions..." --weight=1
-
-# Everyone can access the app.
-# The "main" permission is automatically created before the install script.
-ynh_permission_update --permission="main" --add="visitors"
-ynh_permission_url --permission="main" --auth_header=false
-
-#=================================================
-# RELOAD NGINX
-#=================================================
-ynh_script_progression --message="Reloading NGINX web server..." --weight=1
-
-ynh_systemd_action --service_name=nginx --action=reload
-
-#=================================================
-# ADD APP ADMIN USER
-#=================================================
 ynh_script_progression --message="Adding admin user..." --weight=1
+ynh_exec_as $app NTFY_PASSWORD="$password" $install_dir/ntfy.sh user add --role=admin $admin
 
-ynh_exec_as $app NTFY_PASSWORD="$password" $final_path/ntfy user --config=$final_path/server.yml add --role=admin $admin
-
-#=================================================
-# END OF SCRIPT
-#=================================================
-
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression --message="Installation completed" --last
