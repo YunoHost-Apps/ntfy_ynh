@@ -7,4 +7,4 @@ ynh_backup -s "$install_dir"
 ynh_backup -s "/etc/nginx/conf.d/$domain.d/$app.conf"
 ynh_backup -s "/etc/systemd/system/$app.service"
 
-ynh_print_info -m "Backup script completed. (YunoHost will then actually copy those files to the archive)"
+ynh_print_info --message="Backup script completed. (YunoHost will then actually copy those files to the archive)"

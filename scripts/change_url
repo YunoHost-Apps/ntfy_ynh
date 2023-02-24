@@ -3,13 +3,13 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-ynh_script_progression -m "Updating systemd service..." -w 1
+ynh_script_progression --message="Updating systemd service..." --weight=1
 ynh_add_systemd_config
 
-ynh_script_progression -m "Updating webserver configuration..." -w 1
+ynh_script_progression --message="Updating webserver configuration..." --weight=1
 ynh_change_url_nginx_config
 
-ynh_script_progression -m "Restarting systemd service..." -w 1
+ynh_script_progression --message="Restarting systemd service..." --weight=1
 ynh_systemd_action --action=restart
 
-ynh_script_progression -m "URL change completed" -l
+ynh_script_progression --message="URL change completed" --last
