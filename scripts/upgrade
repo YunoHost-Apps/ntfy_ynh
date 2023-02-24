@@ -15,15 +15,15 @@ fi
 ynh_script_progression -m "Updating configuration file..." -w 1
 ynh_add_config -t "server.yml" -d "$install_dir/server.yml"
 
-ynh_script_progression -m "Updating simple command wrapper..." -w 1
-ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
-chmod u+x "$install_dir/ntfy.sh"
-
 ynh_script_progression -m "Upgrading systemd configuration..." -w 1
 ynh_add_systemd_config
 
 ynh_script_progression -m "Integrating service in YunoHost..." -w 1
 yunohost service add $app
+
+ynh_script_progression -m "Updating simple command wrapper..." -w 1
+ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
+chmod u+x "$install_dir/ntfy.sh"
 
 ynh_script_progression -m "Upgrading web server configuration..." -w 2
 ynh_add_nginx_config

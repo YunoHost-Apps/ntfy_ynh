@@ -9,18 +9,18 @@ ntfy_setup_source
 ynh_script_progression -m "Adding configuration file..." -w 1
 ynh_add_config -t "server.yml" -d "$install_dir/server.yml"
 
-ynh_script_progression -m "Adding a command wrapper..." -w 1
-ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
-chmod u+x "$install_dir/ntfy.sh"
-
 ynh_script_progression -m "Configuring systemd service..." -w 1
 ynh_add_systemd_config
+
+ynh_script_progression -m "Starting systemd service..." -w 1
+ynh_systemd_action -a start
 
 ynh_script_progression -m "Integrating service in YunoHost..." -w 1
 yunohost service add $app
 
-ynh_script_progression -m "Starting systemd service..." -w 1
-ynh_systemd_action -a start
+ynh_script_progression -m "Adding a command wrapper..." -w 1
+ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
+chmod u+x "$install_dir/ntfy.sh"
 
 ynh_script_progression -m "Configuring web server..." -w 2
 ynh_add_nginx_config
