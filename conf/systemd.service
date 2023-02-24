@@ -6,13 +6,13 @@ After=network.target
 Environment="NTFY_LISTEN_HTTP=localhost:__PORT__"
 Environment="NTFY_BASE_URL=https://__DOMAIN__"
 Environment="NTFY_BEHIND_PROXY=1"
-Environment="NTFY_CONFIG_FILE=__FINALPATH__/server.yml"
+Environment="NTFY_CONFIG_FILE=__INSTALL_DIR__/server.yml"
 
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__FINALPATH__/
-ExecStart=__FINALPATH__/ntfy serve
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/ntfy serve
 ExecReload=/bin/kill --signal HUP $MAINPID
 Restart=on-failure
 
