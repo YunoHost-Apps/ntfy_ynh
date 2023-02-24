@@ -22,8 +22,8 @@ fund = "https://liberapay.com/ntfy"
 yunohost = ">= 11"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = true
-ldap = "false"
-sso = "false"
+ldap = false
+sso = false
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
