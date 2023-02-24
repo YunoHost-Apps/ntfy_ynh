@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
+source ../settings/scripts/_common.sh
 
 ynh_backup -s "$install_dir"
 ynh_backup -s "/etc/nginx/conf.d/$domain.d/$app.conf"

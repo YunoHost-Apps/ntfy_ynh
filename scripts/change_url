@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source _common.sh
 source /usr/share/yunohost/helpers
+source _common.sh
 
 ynh_script_progression -m "Updating systemd service..." -w 1
 ynh_add_systemd_config
