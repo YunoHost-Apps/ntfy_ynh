@@ -26,6 +26,6 @@ ynh_script_progression -m "Configuring web server..." -w 2
 ynh_add_nginx_config
 
 ynh_script_progression -m "Adding admin user..." -w 1
-ynh_exec_as $app NTFY_PASSWORD="$password" $install_dir/ntfy.sh user add --role=admin $admin
+# ynh_exec_as $app NTFY_PASSWORD="$password" $install_dir/ntfy.sh user add --role=admin $admin
 
 ynh_script_progression -m "Installation completed" -l
