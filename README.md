@@ -6,7 +6,6 @@ It shall NOT be edited by hand.
 # ntfy for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![Working status](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
-
 [![Install ntfy with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -22,19 +21,6 @@ ntfy (pronounce: *notify*) is a simple HTTP-based pub-sub notification service. 
 **Shipped version:** 2.0.1~ynh2
 
 **Demo:** https://ntfy.sh/app
-## Disclaimers / important information
-
-
-### Configuration
-By default, only user selected at installation can read from and write to topics. To change this refer to the upstream project's documentation: https://docs.ntfy.sh/config/#access-control
-
-The configuration file is located at `/var/www/<app>/server.yml`.
-
-### Limitations
-- requires a dedicated (sub-)domain
-- no LDAP support by upstream application
-
-
 ## Documentation and resources
 
 * Official app website: <https://ntfy.sh/>
