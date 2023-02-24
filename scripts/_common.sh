@@ -16,6 +16,7 @@ ntfy_setup_source {
 }
 
 ntfy_fix_permissions {
+    chmod o+w "$install_dir/data"
     chmod 400 "$install_dir/server.yml"
     chown $app:$app "$install_dir/server.yml"
     chmod +x "$install_dir/ntfy.sh"

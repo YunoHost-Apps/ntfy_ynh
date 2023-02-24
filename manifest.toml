@@ -43,7 +43,6 @@ ram.runtime = "50M"
     [resources.system_user]
 
     [resources.install_dir]
-    owner = __APP__:rwx
 
     [resources.permissions]
     main.url = "/"
