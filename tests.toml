@@ -1,6 +1,6 @@
 test_format = 1.0
 
 [default]
+    test_upgrade_from.812108e.name = "Upgrade from 2.1.2~ynh1"
     test_upgrade_from.86639a1.name = "Upgrade from 2.1.1~ynh1"
     test_upgrade_from.495cd4f.name = "Upgrade from 2.1.0~ynh1"
-    test_upgrade_from.1fa0147.name = "Upgrade from 2.0.1~ynh2"
