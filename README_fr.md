@@ -6,6 +6,7 @@ It shall NOT be edited by hand.
 # ntfy pour YunoHost
 
 [![Niveau d’intégration](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+
 [![Installer ntfy avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
 *[Read this readme in english.](./README.md)*
