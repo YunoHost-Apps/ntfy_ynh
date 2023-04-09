@@ -6,7 +6,6 @@ It shall NOT be edited by hand.
 # ntfy for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![Working status](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
-
 [![Install ntfy with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -19,7 +18,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ntfy (pronounce: *notify*) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, entirely without signup, cost or setup. It's also open source if you want to run your own.
 
 
-**Shipped version:** 2.2.0~ynh1
+**Shipped version:** 2.3.1~ynh1
 
 **Demo:** https://ntfy.sh/app
 ## Documentation and resources
