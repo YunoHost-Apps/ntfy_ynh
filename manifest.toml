@@ -5,7 +5,7 @@ name = "ntfy"
 description.en = "Open Source Push Notification Server"
 description.fr = "Serveur open source de notification"
 
-version = "2.2.0~ynh1"
+version = "2.3.1~ynh1"
 
 maintainers = ["Alexander Wühr"]
 
@@ -19,7 +19,7 @@ code = "https://github.com/binwiederhier/ntfy"
 fund = "https://liberapay.com/ntfy"
 
 [integration]
-yunohost = ">= 11"
+yunohost = ">= 11.1.17"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = true
 ldap = false
