@@ -19,7 +19,7 @@ code = "https://github.com/binwiederhier/ntfy"
 fund = "https://liberapay.com/ntfy"
 
 [integration]
-yunohost = ">= 11"
+yunohost = ">= 11.1.17"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = true
 ldap = false
