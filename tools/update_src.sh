@@ -15,6 +15,6 @@ SOURCE_FILENAME=ntfy_${VERSION}_linux_${2}
 SH
 }
 
-src amd64 x86_64
+src amd64 amd64
 src arm64 arm64
 src armhf armv7
