@@ -7,6 +7,7 @@
 #=================================================
 # PERSONAL HELPERS
 #=================================================
+
 ntfy_setup_source() {
     ynh_setup_source -d "$install_dir" -s "$YNH_ARCH"
     mkdir -p "$install_dir/data"
