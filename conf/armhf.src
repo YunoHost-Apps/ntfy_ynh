@@ -1,6 +1,0 @@
-SOURCE_URL=https://github.com/binwiederhier/ntfy/releases/download/v2.7.0/ntfy_2.7.0_linux_armv7.tar.gz
-SOURCE_SUM=84981fe6f4234fb8e6429b0c6cbe7090bab1f773e1994b42237c40c244cdd326
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=ntfy_2.7.0_linux_armv7
