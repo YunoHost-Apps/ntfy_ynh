@@ -46,10 +46,10 @@ ram.runtime = "50M"
     [resources.sources]
         [resources.sources.main]
         autoupdate.strategy = "latest_github_release"
-        
-        autoupdate.asset.amd64 = ".*_linux_amd64\.tar\.gz"
-        autoupdate.asset.arm64 = ".*_linux_arm64\.tar\.gz"
-        autoupdate.asset.armhf = ".*_linux_armv7\.tar\.gz"
+
+        autoupdate.asset.amd64 = '.*_linux_amd64\.tar\.gz'
+        autoupdate.asset.arm64 = '.*_linux_arm64\.tar\.gz'
+        autoupdate.asset.armhf = '.*_linux_armv7\.tar\.gz'
 
         amd64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.7.0/ntfy_2.7.0_linux_amd64.tar.gz"
         amd64.sha256 = "2218bea3204348700034cff652437e317b8ed2466aa58d8b2444b41b68eaf5e2"
