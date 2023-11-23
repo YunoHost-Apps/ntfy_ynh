@@ -18,7 +18,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ntfy (prononcer : *notify*) est un simple service de notification pub-sub basé sur HTTP. Il vous permet d'envoyer des notifications sur votre téléphone ou votre ordinateur via des scripts depuis n'importe quel ordinateur, sans inscription, sans frais ni configuration. Il est également open source si vous souhaitez exécuter le vôtre.
 
-**Version incluse :** 2.7.0~ynh2
+**Version incluse :** 2.8.0~ynh1
 
 **Démo :** https://ntfy.sh/app
 ## Documentations et ressources
