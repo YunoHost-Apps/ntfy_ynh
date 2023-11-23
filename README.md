@@ -28,7 +28,7 @@ ntfy (pronounce: *notify*) is a simple HTTP-based pub-sub notification service. 
 * Official user documentation: <https://docs.ntfy.sh/>
 * Official admin documentation: <https://docs.ntfy.sh/>
 * Upstream app code repository: <https://github.com/binwiederhier/ntfy>
-* YunoHost documentation for this app: <https://yunohost.org/app_ntfy>
+* YunoHost Store: <https://apps.yunohost.org/app/ntfy>
 * Report a bug: <https://github.com/YunoHost-Apps/ntfy_ynh/issues>
 
 ## Developer info
