@@ -27,7 +27,16 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=6
-	ntfy_setup_source
+	
+	ynh_setup_source --dest_dir="$install_dir"
+
+	mkdir -p "$install_dir/data"
+
+	chmod -R 750 "$install_dir/data"
+	chown -R $app:$app "$install_dir"
+
+	ynh_secure_remove "$install_dir/client"
+	ynh_secure_remove "$install_dir/server"
 fi
 
 #=================================================
@@ -48,14 +57,15 @@ yunohost service add $app --description="Open Source Push Notification Server" -
 #=================================================
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
-ynh_add_config -t "server.yml" -d "$install_dir/server.yml"
+ynh_add_config --template="server.yml" --destination="$install_dir/server.yml"
 
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
 ynh_script_progression --message="Updating simple command wrapper..." --weight=1
 
-ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
+ynh_add_config --template="ntfy.sh" --destination="$install_dir/ntfy.sh"
+
 chown $app:$app "$install_dir/ntfy.sh"
 chmod u+x "$install_dir/ntfy.sh"
 
