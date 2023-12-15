@@ -1,32 +1,78 @@
 #!/bin/bash
 
+#=================================================
+# GENERIC START
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
 
+#=================================================
+# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
 ynh_script_progression --message="Setting up source files..." --weight=6
-ntfy_setup_source
 
+ynh_setup_source --dest_dir="$install_dir"
+
+mkdir -p "$install_dir/data"
+
+chmod -R 750 "$install_dir/data"
+chown -R $app:$app "$install_dir"
+
+ynh_secure_remove "$install_dir/client"
+ynh_secure_remove "$install_dir/server"
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
 ynh_script_progression --message="Adding configuration file..." --weight=1
-ynh_add_config -t "server.yml" -d "$install_dir/server.yml"
 
-ynh_script_progression --message="Configuring systemd service..." --weight=1
+ynh_add_config --template="server.yml" --destination="$install_dir/server.yml"
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+
+ynh_add_nginx_config
+
 ynh_add_systemd_config
 
-ynh_script_progression --message="Starting systemd service..." --weight=1
-ynh_systemd_action --action=start
+yunohost service add $app --description="Open Source Push Notification Server" --log="/var/log/$app/$app.log"
 
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
-yunohost service add $app
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-ynh_script_progression --message="Adding a command wrapper..." --weight=1
 ynh_add_config -t "ntfy.sh" -d "$install_dir/ntfy.sh"
 chown $app:$app "$install_dir/ntfy.sh"
 chmod u+x "$install_dir/ntfy.sh"
 
-ynh_script_progression --message="Configuring web server..." --weight=2
-ynh_add_nginx_config
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=1
 
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+
+#=================================================
+# ADD ADMIN
+#=================================================
 ynh_script_progression --message="Adding admin user..." --weight=1
+
 ynh_exec_as $app NTFY_PASSWORD="$password" $install_dir/ntfy.sh user add --role=admin $admin
+
+#=================================================
+# END OF SCRIPT
+#=================================================
 
 ynh_script_progression --message="Installation completed" --last
