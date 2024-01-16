@@ -59,6 +59,9 @@ ynh_script_progression --message="Updating a configuration file..." --weight=1
 
 ynh_add_config --template="server.yml" --destination="$install_dir/server.yml"
 
+# Create a dedicated Fail2Ban config
+ynh_add_fail2ban_config --logpath="/var/log/nginx/${domain}-error.log" --failregex="limiting requests, excess:.* by zone.*client: <HOST>"
+
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
