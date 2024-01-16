@@ -16,7 +16,7 @@ upgrade_type=$(ynh_check_app_version_changed)
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name="$app" --action="stop" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD...)
@@ -33,7 +33,7 @@ then
 	mkdir -p "$install_dir/data"
 
 	chmod -R 750 "$install_dir/data"
-	chown -R $app:$app "$install_dir"
+	chown -R "$app:$app" "$install_dir"
 
 	ynh_secure_remove "$install_dir/client"
 	ynh_secure_remove "$install_dir/server"
@@ -48,7 +48,7 @@ ynh_add_nginx_config
 
 ynh_add_systemd_config
 
-yunohost service add $app --description="Open Source Push Notification Server" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Open Source Push Notification Server" --log="/var/log/$app/$app.log"
 
 #=================================================
 # RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
@@ -59,6 +59,9 @@ ynh_script_progression --message="Updating a configuration file..." --weight=1
 
 ynh_add_config --template="server.yml" --destination="$install_dir/server.yml"
 
+# Create a dedicated Fail2Ban config
+ynh_add_fail2ban_config --logpath="/var/log/nginx/${domain}-error.log" --failregex="limiting requests, excess:.* by zone.*client: <HOST>"
+
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -66,7 +69,7 @@ ynh_script_progression --message="Updating simple command wrapper..." --weight=1
 
 ynh_add_config --template="ntfy.sh" --destination="$install_dir/ntfy.sh"
 
-chown $app:$app "$install_dir/ntfy.sh"
+chown "$app:$app" "$install_dir/ntfy.sh"
 chmod u+x "$install_dir/ntfy.sh"
 
 #=================================================
@@ -74,7 +77,7 @@ chmod u+x "$install_dir/ntfy.sh"
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT

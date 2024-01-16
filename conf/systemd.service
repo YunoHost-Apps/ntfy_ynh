@@ -3,9 +3,6 @@ Description=ntfy server
 After=network.target
 
 [Service]
-Environment="NTFY_LISTEN_HTTP=localhost:__PORT__"
-Environment="NTFY_BASE_URL=https://__DOMAIN__"
-Environment="NTFY_BEHIND_PROXY=1"
 Environment="NTFY_CONFIG_FILE=__INSTALL_DIR__/server.yml"
 
 Type=simple
