@@ -15,6 +15,9 @@ auth-file: __INSTALL_DIR__/data/user.db
 auth-default-access: "deny-all"
 enable-login: true
 
+# Tell ntfy to use "X-Forwarded-For" to identify visitors
+behind-proxy: true
+
 attachment-cache-dir: __INSTALL_DIR__/data/attachments
 
 upstream-base-url: "https://ntfy.sh"
