@@ -5,7 +5,7 @@ name = "ntfy"
 description.en = "Open Source Push Notification Server"
 description.fr = "Serveur open source de notification"
 
-version = "2.10.0~ynh1"
+version = "2.11.0~ynh1"
 
 maintainers = ["Alexander Wühr"]
 
@@ -50,14 +50,14 @@ autoupdate.asset.amd64 = '.*_linux_amd64\.tar\.gz'
 autoupdate.asset.arm64 = '.*_linux_arm64\.tar\.gz'
 autoupdate.asset.armhf = '.*_linux_armv7\.tar\.gz'
 
-amd64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.10.0/ntfy_2.10.0_linux_amd64.tar.gz"
-amd64.sha256 = "e1457da40e879b6945036ba4bd5193cd78ab8f59d23588fbc1382bdb19f2d8e1"
+amd64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.11.0/ntfy_2.11.0_linux_amd64.tar.gz"
+amd64.sha256 = "61722868e2ace31f736e2b9be8ada1b42d0c2e62d0e785252fdaf482b0a677ed"
 
-arm64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.10.0/ntfy_2.10.0_linux_arm64.tar.gz"
-arm64.sha256 = "44628c3df627c60ff607ee5881b5fa8d1ad3013b487d9f9004270c38ea7835fc"
+arm64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.11.0/ntfy_2.11.0_linux_arm64.tar.gz"
+arm64.sha256 = "02f742c5dd00906a28ebed3d1cb1e1aeb551ebe7789271ee3d28ae2dcc876e4c"
 
-armhf.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.10.0/ntfy_2.10.0_linux_armv7.tar.gz"
-armhf.sha256 = "00fa98e9b45ffb3383f9466e5b60b732092a7f0bcdfc420dad615b36732d2b1a"
+armhf.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.11.0/ntfy_2.11.0_linux_armv7.tar.gz"
+armhf.sha256 = "b2b9b95aa896b71f36bd46f31fae277d8d94171f4209659017f026210c45e722"
 
 [resources.system_user]
 
