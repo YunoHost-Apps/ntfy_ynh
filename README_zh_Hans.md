@@ -5,7 +5,7 @@
 
 # YunoHost 上的 ntfy
 
-[![集成程度](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/ntfy.svg)](https://ci-apps.yunohost.org/ci/apps/ntfy/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
 
 [![使用 YunoHost 安装 ntfy](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
