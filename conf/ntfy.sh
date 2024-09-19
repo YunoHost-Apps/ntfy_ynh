@@ -2,9 +2,14 @@
 
 HOME=__INSTALL_DIR__
 
-if [ ! -f "$HOME/data/user.db" ]; then
+AUTH_FILE="$HOME/data/user.db"
+
+if [ ! -f "$AUTH_FILE" ]; then
     echo "Waiting for server to start"
-    sleep 2
+    t=0
+    until [ -e "$AUTH_FILE" ] || (( t++ >= 20 )); do
+      sleep 1
+    done
 fi
 
 NTFY_CONFIG_FILE="$HOME/server.yml" $HOME/ntfy $@
