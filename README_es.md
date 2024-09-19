@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # ntfy para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/ntfy.svg)](https://ci-apps.yunohost.org/ci/apps/ntfy/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
 
 [![Instalar ntfy con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
@@ -33,7 +33,7 @@ ntfy (pronounce: *notify*) is a simple HTTP-based pub-sub notification service. 
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/ntfy_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/ntfy_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

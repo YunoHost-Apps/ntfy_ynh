@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # ntfy pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/ntfy.svg)](https://dash.yunohost.org/appci/app/ntfy) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/ntfy.svg)](https://ci-apps.yunohost.org/ci/apps/ntfy/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
 
 [![Installer ntfy avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
