@@ -16,21 +16,17 @@ ynh_systemctl --service="$app" --action="stop"
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-# FIXME: this is still supported but the recommendation is now to *always* re-setup the app sources wether or not the upstream sources changed
-if ynh_app_upstream_version_changed
-then
-	ynh_script_progression "Upgrading source files..."
+ynh_script_progression "Upgrading source files..."
 
-	ynh_setup_source --dest_dir="$install_dir"
+ynh_setup_source --dest_dir="$install_dir"
 
-	mkdir -p "$install_dir/data"
+mkdir -p "$install_dir/data"
 
-	chmod -R 750 "$install_dir/data"
-	chown -R "$app:$app" "$install_dir"
+chmod -R 750 "$install_dir/data"
+chown -R "$app:$app" "$install_dir"
 
-	ynh_safe_rm "$install_dir/client"
-	ynh_safe_rm "$install_dir/server"
-fi
+ynh_safe_rm "$install_dir/client"
+ynh_safe_rm "$install_dir/server"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
