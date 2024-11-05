@@ -19,7 +19,7 @@ Ini TIDAK boleh diedit dengan tangan.
 ntfy (pronounce: *notify*) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, entirely without signup, cost or setup. It's also open source if you want to run your own.
 
 
-**Versi terkirim:** 2.11.0~ynh1
+**Versi terkirim:** 2.11.0~ynh2
 
 **Demo:** <https://ntfy.sh/app>
 ## Dokumentasi dan sumber daya
