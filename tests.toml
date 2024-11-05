@@ -2,12 +2,11 @@ test_format = 1.0
 
 [default]
 
-# ntfy needs to be publicly exposed to properly work, see #34 
-exclude = "install.private"
+# ntfy needs to be publicly exposed to properly work, see #34
+exclude = ["install.private"]
 
 # -------------------------------
 # Commits to test upgrade from
 # -------------------------------
 
-test_upgrade_from.2c90a35.name = "Upgrade from 2.9.0~ynh1"
-test_upgrade_from.dbdb3bb.name = "Upgrade from 2.8.0~ynh1"
+test_upgrade_from.8b51bf5.name = "Upgrade from 2.11.0~ynh2 "
