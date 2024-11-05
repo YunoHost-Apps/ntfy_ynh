@@ -9,5 +9,4 @@ exclude = ["install.private"]
 # Commits to test upgrade from
 # -------------------------------
 
-test_upgrade_from.2c90a35.name = "Upgrade from 2.9.0~ynh1"
-test_upgrade_from.dbdb3bb.name = "Upgrade from 2.8.0~ynh1"
+test_upgrade_from.04bb5b6.name = "Upgrade from 2.11.0~ynh1 "
