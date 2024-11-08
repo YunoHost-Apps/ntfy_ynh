@@ -39,6 +39,10 @@ ynh_config_add_systemd
 
 yunohost service add "$app" --description="Open Source Push Notification Server" --log="/var/log/$app/$app.log"
 
+# Allow required basic auth
+ynh_app_setting_set --key=auth-header --value=basic-with-password
+ynh_app_setting_set --key=protect_against_basic_auth_spoofing --value=False
+
 #=================================================
 # RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
 #=================================================
