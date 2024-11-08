@@ -43,6 +43,10 @@ yunohost service add "$app" --description="Open Source Push Notification Server"
 # Create a dedicated Fail2Ban config
 ynh_config_add_fail2ban --logpath="/var/log/nginx/${domain}-error.log" --failregex="limiting requests, excess:.* by zone.*client: <HOST>"
 
+# Allow required basic auth
+ynh_app_setting_set --key=auth-header --value=basic-with-password
+ynh_app_setting_set --key=protect_against_basic_auth_spoofing --value=False
+
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -68,7 +72,6 @@ ynh_script_progression "Adding admin user..."
 # Auth database after the first start. Only then we
 # can create the admin user.
 ynh_exec_as_app timeout 15s bash -c "until [ -f $install_dir/data/user.db ] ; do sleep 1; done"
-
 
 ynh_exec_as_app NTFY_PASSWORD="$password" "$install_dir/ntfy" user -c "$install_dir/server.yml" add --role=admin "$admin"
 
