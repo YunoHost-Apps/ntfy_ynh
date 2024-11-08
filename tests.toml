@@ -9,4 +9,4 @@ exclude = ["install.private"]
 # Commits to test upgrade from
 # -------------------------------
 
-test_upgrade_from.8b51bf5.name = "Upgrade from 2.11.0~ynh2 "
+test_upgrade_from.6f8aab0.name = "Upgrade from 2.11.0~ynh2"
