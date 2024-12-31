@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # ntfy YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/ntfy.svg)](https://ci-apps.yunohost.org/ci/apps/ntfy/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/ntfy)](https://ci-apps.yunohost.org/ci/apps/ntfy/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/ntfy)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/ntfy)
 
 [![Instalatu ntfy YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 

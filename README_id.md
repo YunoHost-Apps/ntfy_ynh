@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # ntfy untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/ntfy.svg)](https://ci-apps.yunohost.org/ci/apps/ntfy/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/ntfy)](https://ci-apps.yunohost.org/ci/apps/ntfy/)
+![Status kerja](https://apps.yunohost.org/badge/state/ntfy)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/ntfy)
 
 [![Pasang ntfy dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 

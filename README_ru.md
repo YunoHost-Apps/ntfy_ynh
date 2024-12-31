@@ -5,7 +5,9 @@
 
 # ntfy для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/ntfy.svg)](https://ci-apps.yunohost.org/ci/apps/ntfy/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/ntfy.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/ntfy.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/ntfy)](https://ci-apps.yunohost.org/ci/apps/ntfy/)
+![Состояние работы](https://apps.yunohost.org/badge/state/ntfy)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/ntfy)
 
 [![Установите ntfy с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ntfy)
 
