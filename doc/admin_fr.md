@@ -7,7 +7,7 @@ Le fichier de configuration se trouve dans `__INSTALL_DIR__/server.yml` et peut 
 Pour configurer les utilisateurs, les jetons, les acls et les niveaux, vous trouverez un petit script wrapper dans `__INSTALL_DIR__/ntfy.sh`.
 
 ```
-sudo ~__APP__/ntfy.sh user add votre_nouveau_nom d'utilisateur
+sudo ~__APP__/ntfy.sh user add votre_nouveau_nom_d_utilisateur
 ```
 
 par exemple, ajoutera un nouvel utilisateur.
