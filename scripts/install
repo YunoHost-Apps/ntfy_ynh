@@ -76,6 +76,11 @@ ynh_exec_as_app timeout 15s bash -c "until [ -f $install_dir/data/user.db ] ; do
 ynh_exec_as_app NTFY_PASSWORD="$password" "$install_dir/ntfy" user -c "$install_dir/server.yml" add --role=admin "$admin"
 
 #=================================================
+# enable unifiedpush right to access read write
+#=================================================
+ynh_exec_as_app "$install_dir/ntfy.sh" access everyone "up*" rw
+
+#=================================================
 # END OF SCRIPT
 #=================================================
 
