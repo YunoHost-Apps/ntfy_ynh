@@ -33,42 +33,42 @@ ram.build = "50M"
 ram.runtime = "50M"
 
 [install]
-[install.domain]
-type = "domain"
+	[install.domain]
+	type = "domain"
 
-[install.admin]
-type = "user"
+	[install.admin]
+	type = "user"
 
-[install.password]
-type = "password"
+	[install.password]
+	type = "password"
 
 [resources]
-[resources.sources]
-[resources.sources.main]
-autoupdate.strategy = "latest_github_release"
+	[resources.sources]
 
-autoupdate.asset.amd64 = '.*_linux_amd64\.tar\.gz'
-autoupdate.asset.arm64 = '.*_linux_arm64\.tar\.gz'
-autoupdate.asset.armhf = '.*_linux_armv7\.tar\.gz'
+	[resources.sources.main]
+	amd64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.12.0/ntfy_2.12.0_linux_amd64.tar.gz"
+	amd64.sha256 = "7adec06908ee095695640474e239caa03f92b6fb9d2cdbab9f46675e86dd8901"
 
-amd64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.12.0/ntfy_2.12.0_linux_amd64.tar.gz"
-amd64.sha256 = "7adec06908ee095695640474e239caa03f92b6fb9d2cdbab9f46675e86dd8901"
+	arm64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.12.0/ntfy_2.12.0_linux_arm64.tar.gz"
+	arm64.sha256 = "75797f7eb388d74f53f249d70bad9c889635483123f6ada20a9cc04529bf9f18"
 
-arm64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.12.0/ntfy_2.12.0_linux_arm64.tar.gz"
-arm64.sha256 = "75797f7eb388d74f53f249d70bad9c889635483123f6ada20a9cc04529bf9f18"
+	armhf.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.12.0/ntfy_2.12.0_linux_armv7.tar.gz"
+	armhf.sha256 = "defafe8342007a921e60199d873e4885138bac4488f5727bc91f5e16453a7923"
 
-armhf.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.12.0/ntfy_2.12.0_linux_armv7.tar.gz"
-armhf.sha256 = "defafe8342007a921e60199d873e4885138bac4488f5727bc91f5e16453a7923"
+	autoupdate.strategy = "latest_github_release"
+	autoupdate.asset.amd64 = '.*_linux_amd64\.tar\.gz'
+	autoupdate.asset.arm64 = '.*_linux_arm64\.tar\.gz'
+	autoupdate.asset.armhf = '.*_linux_armv7\.tar\.gz'
 
-[resources.system_user]
+	[resources.system_user]
 
-[resources.install_dir]
+	[resources.install_dir]
 
-[resources.permissions]
-main.url = "/"
-main.auth_header = false
-main.protected = true
-main.allowed = "visitors"
+	[resources.permissions]
+	main.url = "/"
+	main.auth_header = false
+	main.protected = true
+	main.allowed = "visitors"
 
-[resources.ports]
-main.default = 8080
+	[resources.ports]
+	main.default = 8080

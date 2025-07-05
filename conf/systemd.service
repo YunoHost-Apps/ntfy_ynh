@@ -3,11 +3,10 @@ Description=ntfy server
 After=network.target
 
 [Service]
-Environment="NTFY_CONFIG_FILE=__INSTALL_DIR__/server.yml"
-
 Type=simple
 User=__APP__
 Group=__APP__
+Environment="NTFY_CONFIG_FILE=__INSTALL_DIR__/server.yml"
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/ntfy serve
 ExecReload=/bin/kill --signal HUP $MAINPID
