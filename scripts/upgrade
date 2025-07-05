@@ -11,8 +11,6 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service="$app" --action="stop"
 
 #=================================================
-# "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD...)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -43,8 +41,6 @@ yunohost service add "$app" --description="Open Source Push Notification Server"
 ynh_app_setting_set --key=auth-header --value=basic-with-password
 ynh_app_setting_set --key=protect_against_basic_auth_spoofing --value=False
 
-#=================================================
-# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
