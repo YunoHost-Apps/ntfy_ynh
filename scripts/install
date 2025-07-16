@@ -4,8 +4,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
@@ -20,8 +18,6 @@ chown -R "$app:$app" "$install_dir"
 ynh_safe_rm "$install_dir/client"
 ynh_safe_rm "$install_dir/server"
 
-#=================================================
-# APP INITIAL CONFIGURATION
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -74,6 +70,11 @@ ynh_script_progression "Adding admin user..."
 ynh_exec_as_app timeout 15s bash -c "until [ -f $install_dir/data/user.db ] ; do sleep 1; done"
 
 ynh_exec_as_app NTFY_PASSWORD="$password" "$install_dir/ntfy" user -c "$install_dir/server.yml" add --role=admin "$admin"
+
+#=================================================
+# enable unifiedpush right to access read write
+#=================================================
+ynh_exec_as_app "$install_dir/ntfy.sh" access everyone "up*" rw
 
 #=================================================
 # END OF SCRIPT
