@@ -12,7 +12,7 @@ Open Source Push Notification Server
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://ntfy.sh/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://ntfy.sh/app)
-[![Version: 2.13.0~ynh1](https://img.shields.io/badge/Version-2.13.0~ynh1-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/ntfy/)
+[![Version: 2.14.0~ynh1](https://img.shields.io/badge/Version-2.14.0~ynh1-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/ntfy/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/ntfy"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
