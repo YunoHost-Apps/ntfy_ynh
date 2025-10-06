@@ -2,8 +2,8 @@ packaging_format = 2
 
 id = "ntfy"
 name = "ntfy"
-description.en = "Open Source Push Notification Server"
-description.fr = "Serveur open source de notification"
+description.en = "Send notifications to a smartphone or computer via scripts"
+description.fr = "Service pour envoyer des notifications vers un smartphone ou ordinateur via des scripts"
 
 version = "2.14.0~ynh1"
 
