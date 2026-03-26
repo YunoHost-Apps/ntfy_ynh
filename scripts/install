@@ -41,6 +41,7 @@ ynh_config_add_fail2ban --logpath="/var/log/nginx/${domain}-error.log" --failreg
 # Allow required basic auth
 ynh_app_setting_set --key=auth-header --value=basic-with-password
 ynh_app_setting_set --key=protect_against_basic_auth_spoofing --value=False
+yunohost app ssowatconf
 
 #=================================================
 # ADD A CONFIGURATION
