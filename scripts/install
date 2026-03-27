@@ -74,7 +74,7 @@ ynh_exec_as_app NTFY_PASSWORD="$password" "$install_dir/ntfy" user -c "$install_
 #=================================================
 # enable unifiedpush right to access read write
 #=================================================
-ynh_exec_as_app "$install_dir/ntfy.sh" access everyone "up*" rw
+ynh_exec_as_app "$install_dir/ntfy.sh" access everyone "up*" wo
 
 #=================================================
 # END OF SCRIPT
