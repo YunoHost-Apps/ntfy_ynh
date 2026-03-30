@@ -12,6 +12,8 @@ ExecStart=__INSTALL_DIR__/ntfy serve
 ExecReload=/bin/kill --signal HUP $MAINPID
 Restart=on-failure
 
+ReadWritePaths=__INSTALL_DIR__/data/
+
 AmbientCapabilities=CAP_NET_BIND_SERVICE
 LimitNOFILE=10000
 
@@ -22,7 +24,7 @@ RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
 RestrictNamespaces=yes
 RestrictRealtime=yes
 DevicePolicy=closed
-ProtectSystem=full
+ProtectSystem=strict
 ProtectControlGroups=yes
 ProtectKernelModules=yes
 ProtectKernelTunables=yes
