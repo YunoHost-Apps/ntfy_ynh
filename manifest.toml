@@ -5,7 +5,7 @@ name = "ntfy"
 description.en = "Send notifications to a smartphone or computer via scripts"
 description.fr = "Service pour envoyer des notifications vers un smartphone ou ordinateur via des scripts"
 
-version = "2.26.0~ynh1"
+version = "2.26.3~ynh1"
 
 maintainers = ["Alexander Wühr"]
 
@@ -45,14 +45,14 @@ ram.runtime = "50M"
 	[resources.sources]
 
 	[resources.sources.main]
-	amd64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.26.0/ntfy_2.26.0_linux_amd64.tar.gz"
-	amd64.sha256 = "0a1c4ed14e96e4e4ae8773151ff032d276932f8f193cf37c7a3d82b0ab595673"
+	amd64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.26.3/ntfy_2.26.3_linux_amd64.tar.gz"
+	amd64.sha256 = "56459cc96110d27f1d952351b7ea2883b894a122ca4cc2339c841003c61c138b"
 
-	arm64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.26.0/ntfy_2.26.0_linux_arm64.tar.gz"
-	arm64.sha256 = "3f5b62454eddd5d992641b711fc56c4244564daa0c9dfbbcb0d2db0792b74d19"
+	arm64.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.26.3/ntfy_2.26.3_linux_arm64.tar.gz"
+	arm64.sha256 = "3dbbf626f1c4f2b647509baa109f8330466dc508aa55545f9b58ea5490eb358d"
 
-	armhf.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.26.0/ntfy_2.26.0_linux_armv7.tar.gz"
-	armhf.sha256 = "918cd74ebdc279a9d4df51a9e7ece89ef01d2dafc9aec9667590327d15e6bcb7"
+	armhf.url = "https://github.com/binwiederhier/ntfy/releases/download/v2.26.3/ntfy_2.26.3_linux_armv7.tar.gz"
+	armhf.sha256 = "378d188407dde74b3cd9c6a2e226f162811d33ecc92d8fe1433296090032fc59"
 
 	autoupdate.strategy = "latest_github_release"
 	autoupdate.asset.amd64 = '.*_linux_amd64\.tar\.gz'
