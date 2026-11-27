@@ -10,6 +10,13 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service="$app" --action="stop"
 
 #=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+
+ynh_app_setting_set_default --key=web_push_public_key --value=""
+ynh_app_setting_set_default --key=web_push_private_key --value=""
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
