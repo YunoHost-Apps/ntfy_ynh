@@ -3,6 +3,13 @@
 source /usr/share/yunohost/helpers
 
 #=================================================
+# INITIALIZE AND STORE SETTINGS
+#=================================================
+
+ynh_app_setting_set_default --key=web_push_public_key --value=""
+ynh_app_setting_set_default --key=web_push_private_key --value=""
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."

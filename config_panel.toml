@@ -1,0 +1,31 @@
+
+## -----------------------------------------------------------------------------
+## IMPORTANT: In accordance with YunoHost's spirit, please keep things simple and
+## do not overwhelm the admin with tons of misunderstandable or advanced settings.
+## -----------------------------------------------------------------------------
+
+version = "1.0"
+
+
+[web_push]
+name.en = "Main configuration"
+name.fr = "Configuration principale"
+services = ["__APP__"]
+
+
+    [web_push.config]
+    name.en = "Configuration options"
+    name.fr = "Options de configuration"
+
+
+        [web_push.config.web_push_public_key]
+        ask.en = "Change the web push public key."
+        type = "string"
+        help.en = "See the admin docs to find how to find it"
+        bind = "web-push-public-key:/var/www/__APP__/server.yml"
+
+        [web_push.config.web_push_private_key]
+        ask.en = "Change the web push private key."
+        type = "string"
+        help.en = "See the admin docs to find how to find it"
+        bind = "web-push-private-key:/var/www/__APP__/server.yml"

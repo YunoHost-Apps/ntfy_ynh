@@ -11,3 +11,12 @@ sudo ~__APP__/ntfy.sh user add your_new_username
 ```
 
 for example will add a new user.
+
+### Web Push
+
+If you'd like to find the web push public and private keys to add in the config panel, you can proceed by cli:
+
+```
+yunohost app shell __APP__
+ntfy webpush keys
+```
