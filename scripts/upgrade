@@ -45,7 +45,8 @@ yunohost app ssowatconf
 #=================================================
 ynh_script_progression "Updating configuration..."
 
-ynh_config_add --template="server.yml" --destination="$install_dir/server.yml"
+# Do not replace the config file on upgrade, as lots of people make changes in it. If we want to update it, we have to make a config_panel
+#ynh_config_add --template="server.yml" --destination="$install_dir/server.yml"
 
 # Create a dedicated Fail2Ban config
 ynh_config_add_fail2ban --logpath="/var/log/nginx/${domain}-error.log" --failregex="limiting requests, excess:.* by zone.*client: <HOST>"
